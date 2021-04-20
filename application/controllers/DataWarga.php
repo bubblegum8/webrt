@@ -54,6 +54,7 @@ class DataWarga extends CI_Controller{
 	}
 
 	function submit_tambah(){
+		$data['nkk'] = $this->input->post('nkk');
 		$data['nik'] = $this->input->post('nik');
 		$data['nama'] = $this->input->post('nama');
 		$data['jk'] = $this->input->post('jk');
@@ -95,6 +96,7 @@ class DataWarga extends CI_Controller{
 
 	function submit_edit(){
 		$id = $this->input->post('nik');
+		$data['nkk'] = $this->input->post('nkk');
 		$data['nama'] = $this->input->post('nama');
 		$data['jk'] = $this->input->post('jk');
 		$data['tempat_lahir'] = $this->input->post('tempat_lahir');

@@ -9,7 +9,7 @@ class Profil_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('detail_warga b');
-        $this->db->join('warga a', 'a.nkk = b.nkk', 'left');
+        $this->db->join('user a', 'a.nkk = b.nkk', 'left');
         $return = $this->db->get('');
         return $return->result();
     }

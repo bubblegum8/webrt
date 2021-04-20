@@ -25,8 +25,13 @@
             <div class="box-body">
 
                 <div class="form-group">
+                <label for="nkk">NKK</label>
+                <input class="form-control" type="hidden" name="nkkLama" value="<?=$nkk?>"/>
+                <input class="form-control" type="text" name="nkk" placeholder="Input NKK" value="<?=$nkk?>"/>       
+                </div>
+
+                <div class="form-group">
                 <label for="Email">Email</label>
-                <input class="form-control" type="hidden" name="id" value="<?=$id?>"/>
                 <input class="form-control" type="text" name="email" placeholder="Input Email" value="<?=$email?>"/>       
                 </div>
 

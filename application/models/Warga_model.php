@@ -7,7 +7,7 @@ class Warga_model extends CI_model {
     }
 
     public function all(){
-        $query = $this->db->query("SELECT * from detail_warga");
+        $query = $this->db->query("SELECT * from user");
         $data = $query->result();
 
         return $data;

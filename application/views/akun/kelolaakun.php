@@ -34,6 +34,7 @@
                         <thead>
                             <tr>
                                 <th>NO</th>
+                                <th>NKK</th>
                                 <th>Email</th>
                                 <th>Password</th>
                                 <th>Role</th>
@@ -46,12 +47,13 @@
                             foreach ($akun as $akn) {
                                 echo '<tr>';  
                                 echo '<td>'.$i.'</td>
+                                <td>'.$akn->nkk.'</td>
                                 <td>'.$akn->email.'</td>
                                 <td>'.$akn->password.'</td>
                                 <td>'.$akn->role.'</td>
                                 <td>
-                                <a href="'.base_url("akun/edit/$akn->id").'" class="btn btn-success" role="button"><i class="glyphicon glyphicon-edit"></i></a>
-                                 <a href="'.base_url("akun/hapus/$akn->id").'" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-trash"></i></a>
+                                <a href="'.base_url("akun/edit/$akn->nkk").'" class="btn btn-success" role="button"><i class="glyphicon glyphicon-edit"></i></a>
+                                 <a href="'.base_url("akun/hapus/$akn->nkk").'" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-trash"></i></a>
                                 </td>';
                                 echo '</tr>';
                                 $i++;

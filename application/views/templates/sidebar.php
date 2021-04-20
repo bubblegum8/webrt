@@ -25,12 +25,6 @@
           </a>
         </li>
         <li class="treeview-active">
-          <a href="'.site_url().'profil">
-            <i class="fa fa-user"></i>
-            <span>Profil</span>
-          </a>
-        </li>
-        <li class="treeview-active">
           <a href="'.site_url().'datart">
             <i class="fa fa-book"></i>
             <span>Data RT</span>

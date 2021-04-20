@@ -23,6 +23,24 @@
             <!-- form start -->
             <form  action="<?php echo base_url('datawarga/'.$aksi.'');?>" method="post" enctype="multipart/form-data">
             <div class="box-body">
+
+                <div class="form-group">
+                  <label for="">NKK</label>
+                  <select class="form-control" name="nkk">
+                  <option>- Pilih NKK -</option>
+                    <?php
+                    foreach ($data as $row) {
+                      if($nkk == $row->nkk){
+                        echo '<option value="'.$row->nkk.'" selected>'.$row->nkk.'</option>';
+                      }
+                      else{
+                        echo '<option value="'.$row->nkk.'">'.$row->nkk.'</option>';
+                      }
+                    }
+                    ?>
+                  </select>
+                </div>
+
                 <div class="form-group">
                 <label for="NIK">NIK</label>
                 <input class="form-control" type="text" name="nik" placeholder="NIK" value="<?=$nik?>"/>       

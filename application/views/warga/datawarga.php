@@ -34,6 +34,7 @@
                         <thead>
                             <tr>
                                 <th>NO</th>
+                                <th>NKK</th>
                                 <th>NIK</th>
                                 <th>Nama</th>
                                 <th>Jenis Kelamin</th>
@@ -48,6 +49,7 @@
                             foreach ($warga as $wrg) {
                                 echo '<tr>';  
                                 echo '<td>'.$i.'</td>
+                                <td>'.$wrg->nkk.'</td>
                                 <td>'.$wrg->nik.'</td>
                                 <td>'.$wrg->nama.'</td>
                                 <td>'.$wrg->jk.'</td>

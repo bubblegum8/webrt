@@ -16,8 +16,8 @@ class Akun_model extends CI_Model {
 		$this->db->insert($table,$data);
 	}
 
-    function display_row($id){		
-		$query = $this->db->query("SELECT * from user WHERE id = '".$id."'");
+    function display_row($nkk){		
+		$query = $this->db->query("SELECT * from user WHERE nkk = '".$nkk."'");
 
         foreach ($query->result_array() as $row)
 		{
@@ -25,13 +25,13 @@ class Akun_model extends CI_Model {
 		}
 	}
 
-    public function updateAkun($data, $id){
-        $this->db->where("id", $id);
+    public function updateAkun($data,$id){
+        $this->db->where("nkk", $id);
         $this->db->update("user", $data);
     }
 
-    function hapus_data($id){
-		$this->db->where('id', $id);
+    function hapus_data($nkk){
+		$this->db->where('nkk', $nkk);
 		$this->db->delete('user');
 	}
 }

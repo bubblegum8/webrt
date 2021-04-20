@@ -19,6 +19,7 @@ class Akun extends CI_Controller{
 	}
 
 	function tambah(){
+		$data['nkk'] = '';
 		$data['email'] = '';
 		$data['password'] = '';
 		$data['role'] = '';
@@ -35,6 +36,7 @@ class Akun extends CI_Controller{
 	}
 
 	function submit_tambah(){
+		$data['nkk'] = $this->input->post('nkk');
 		$data['email'] = $this->input->post('email');
 		$data['password'] = $this->input->post('password');
 		$data['role'] = $this->input->post('role');
@@ -46,14 +48,14 @@ class Akun extends CI_Controller{
 	}
 
 	function hapus(){
-		$id = $this->uri->segment('3');
-		$this->Akun_model->hapus_data($id);
+		$nkk = $this->uri->segment('3');
+		$this->Akun_model->hapus_data($nkk);
 		redirect('akun', 'refresh');
 	}
 
 	function edit(){
-		$id = $this->uri->segment('3');
-		$data = $this->Akun_model->display_row($id);
+		$nkk = $this->uri->segment('3');
+		$data = $this->Akun_model->display_row($nkk);
 		$data['data'] = $this->Akun_model->all();
 		$data['aksi'] = 'submit_edit';
 		$data['judul'] = 'Edit Akun';
@@ -66,12 +68,13 @@ class Akun extends CI_Controller{
 	}
 
 	function submit_edit(){
-		$id 				= $this->input->post('id');
+		$id 				= $this->input->post('nkkLama');
+		$data['nkk']		= $this->input->post('nkk');
 		$data['email'] 		= $this->input->post('email');
 		$data['password'] 	= $this->input->post('password');
 		$data['role'] 		= $this->input->post('role');
 
-		$this->Akun_model->updateAkun($data, $id);
+		$this->Akun_model->updateAkun($data,$id);
 
 		redirect('akun', 'refresh'); 
 	}
